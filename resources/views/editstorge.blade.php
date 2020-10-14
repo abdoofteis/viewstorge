@@ -3,27 +3,28 @@
 @section('content')
  <div class=" container ">
     <div clas="content">
-     <form action ="{{Route('upload')}}" method="post" enctype="multipart/form-data" >
-     @csrf 
+    <form action="{{route('update_img',['id'=>$img->id])}}" method="post" enctype="multipart/form-data" style="display: inline;" id="edit-img">
+      @method('PATCH')
+                    @csrf 
      <div class="row form-group">
      <label class="col-2 col-form-label"> title</label>
      <div class=" col-10">
-     <input type ="text" name ="title" >
+     <input type ="text" name ="title" value= "{{$img->title}}">
       </div>
      </div>
      
      <!-- <br> -->
      <div class="row form-group">
-     <label class="col-2 col-form-label">text description</label>
+     <label class="col-2 col-form-label">name</label>
      <div class=" col-10">
-     <input type ="text" name ="name">
+     <input type ="text" name="name" value="{{$img->name}}">
      </div>
      </div>
      <!-- <br> -->
      <div class="row form-group">
-     <label class="col-2 col-form-label">uplode file </label>
+     <label class="col-2 col-form-label">storge </label>
      <div class=" col-10">
-     <input type="file" class="img" name="img">
+     <input type="file" class="img" name="img" >
 </div>
      </div>
 

@@ -25,4 +25,11 @@ class HomeController extends Controller
     {
         return view('home2');
     }
+
+    public function destroy($id)
+    {
+         img::find($id)->delete();
+
+         return redirect()->route('view');
+     }
 }
